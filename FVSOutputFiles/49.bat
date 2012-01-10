@@ -1,1 +1,0 @@
-C:\FVSbin\FVSsox.exe < N:\FireProject_Part2\BuildLookupFVS\FVSInputFiles\49.in

@@ -37,7 +37,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	//fclose(standlist);
 	DBase openMDB;
 
-
+	getchar();
 
 	return 0;
 }

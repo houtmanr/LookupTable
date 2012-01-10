@@ -47,13 +47,13 @@ InputFile::InputFile(int stand)
 			//Open and read stands and treelists
 			fprintf(input, "DATABASE\n"
 						     "DSNIN\n"
-						     "%s\\RealSAStands.mdb\n"
+						     "%s\RealSAStands.mdb\n"
 						     "StandSQL\n"
 						     "SELECT * FROM StandsSAReal\n"
 						     "WHERE tree_cn = '%%stand_cn%%'\n"
 						   "EndSQL\n"
 						   "DSNIN\n"
-						     "%s\\RealSAStands.mdb\n"
+						     "%s\RealSAStands.mdb\n"
 						     "TreeSQL\nSELECT * FROM TreesSAReal\n"
 						     "WHERE tree_cn = (SELECT tree_cn FROM StandsSAReal\n"
 						     "WHERE tree_cn = '%%stand_cn%%')\n"
@@ -83,7 +83,7 @@ InputFile::InputFile(int stand)
 						   "ECHOSUM\n"
 						   "DATABASE\n"
 						   "DSNOUT\n"
-						     "%s\n"
+						     "%s\outputs.mdb\n"
 							 "SUMMARY\n"
 						     "COMPUTE\n"
 							 "TREELIST\n"
@@ -98,7 +98,7 @@ InputFile::InputFile(int stand)
 		}
 		if(i == 2)// Write the batch file
 		{
-			fprintf(input, "C:\\FVSbin\\FVSsox.exe < %s\\%d.in", inPath, stand);
+			fprintf(input, "C:\\FVSbin\\FVSsox.exe < %s%d.in", inPath, stand);
 		}
 		fclose(input);
 	}
