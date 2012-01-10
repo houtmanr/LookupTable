@@ -1,0 +1,1 @@
+The outputs folder must contain a blank mdb file labeled outputs.mdb. FVS will not create a file and will error if the database is not already present.

@@ -1,0 +1,1 @@
+The input file must be an .mdb file containing stand and tree-level data formated for FVS.

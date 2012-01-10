@@ -1,4 +1,4 @@
-﻿Build started 1/9/2012 5:01:45 PM.
+﻿Build started 1/10/2012 8:50:00 AM.
      1>Project "N:\FireProject_Part2\LookupTable\BuildLookupFVS\BuildLookupFVS\BuildLookupFVS.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\BuildLookupFVS.unsuccessfulbuild" because "AlwaysCreate" was specified.
@@ -18,4 +18,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.51
+Time Elapsed 00:00:00.77
