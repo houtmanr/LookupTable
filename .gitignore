@@ -1,0 +1,5 @@
+*.mdb
+\BuildLookupFVS\Debug*
+*.sln
+*.suo
+\BuildLookupFVS\BuildLookupFVS\Debug*
