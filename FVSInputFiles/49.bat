@@ -1,0 +1,1 @@
+C:\FVSbin\FVSsox.exe < ..\..\FVSInputFiles\49.in
