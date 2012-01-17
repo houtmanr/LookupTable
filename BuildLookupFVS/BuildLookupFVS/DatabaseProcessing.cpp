@@ -18,8 +18,6 @@ DBase::DBase()
 	// Create object name for the database
 	CDatabase inputs;
 
-	//WORK IN PROGRESS 11/1/2011
-
 	TRY
 	{ 
 		result = inputs.OpenEx(lpszConnect, 
@@ -37,7 +35,7 @@ DBase::DBase()
 	    // Query the data file and pull out the stand characteristics for processing
 		LPCTSTR query = _T("SELECT FVS_Compute.[StandID], FVS_Compute.[FML], FVS_Compute.[HTT], FVS_Compute.HTLIVE, FVS_Compute.[CBD] FROM FVS_Compute;");
 
-		cout<<DAM<<": SQL query:\n"<<query<<endl;
+		cout<<DAM<<": SQL query:\n"<<CStringA(query)<<endl;
 
 		CRecordset rs(&inputs);
 		result = rs.Open(CRecordset::dynaset, query, CRecordset::none);
@@ -52,7 +50,7 @@ DBase::DBase()
 				{
 					CODBCFieldInfo fInfo;
 					rs.GetODBCFieldInfo(nIndex, fInfo);
-					cout<<" | "<<fInfo.m_strName;
+					cout<<" | "<<CStringA(fInfo.m_strName);
 				}
 				cout<<endl;
 			}
@@ -72,12 +70,6 @@ DBase::DBase()
 					rs.GetFieldValue(nIndex, var);
 					switch (var.m_dwType)
 					{
-						case DBVT_STRING:
-							value.Format(_T("%s"), var.m_pstring->GetBuffer(var.m_pstring->GetLength()));
-							break;
-						case DBVT_ASTRING:
-							value.Format(_T("%s"), var.m_pstringA->GetBuffer(var.m_pstringA->GetLength()));
-							break;
                         case DBVT_WSTRING:
 							value.Format(_T("%s"), var.m_pstringW->GetBuffer(var.m_pstringW->GetLength()));
 							break;

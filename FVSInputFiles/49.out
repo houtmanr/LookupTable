@@ -1,4 +1,4 @@
-        FOREST VEGETATION SIMULATOR     VERSION 3845 -- S. CEN. OREGON/N.E. CALIF. PROGNOSIS   RV:02/16/11    01-12-2012  15:54:34
+        FOREST VEGETATION SIMULATOR     VERSION 3845 -- S. CEN. OREGON/N.E. CALIF. PROGNOSIS   RV:02/16/11    01-13-2012  16:16:27
 
 ----------------------------------------------------------------------------------------------------------------------------------
 
@@ -153,6 +153,18 @@ COMPUTE    COMPUTE VARIABLES SENT TO CONNECTION ..\..\FVSOutputFiles\outputs.mdb
 TREELIST   TREE INFORMATION FROM OUTPUT SENT TO CONNECTION ..\..\FVSOutputFiles\outputs.mdb
            SPECIES CODE OUTPUT FORMAT: NORMAL  
            CREATE TEXT FILE REPORT: YES
+
+SQLOUT     SQL COMMAND FOR OUTPUT CONNECTION
+           Drop Table FVS_Compute
+
+SQLOUT     SQL COMMAND FOR OUTPUT CONNECTION
+           Drop Table FVS_Summary
+
+SQLOUT     SQL COMMAND FOR OUTPUT CONNECTION
+           Drop Table FVS_Treelist
+
+SQLOUT     SQL COMMAND FOR OUTPUT CONNECTION
+           Drop Table FVS_Cases
 
 END        END OF DATA BASE OPTIONS.
 
@@ -517,7 +529,7 @@ INITIAL SCALE FACTORS FOR THE SMALL TREE
 HEIGHT INCREMENT MODEL                          1.00  1.00
 
 NUMBER OF RECORDS WITH MISTLETOE                   0     0
-        FOREST VEGETATION SIMULATOR     VERSION 3845 -- S. CEN. OREGON/N.E. CALIF. PROGNOSIS   RV:02/16/11    01-12-2012  15:54:34
+        FOREST VEGETATION SIMULATOR     VERSION 3845 -- S. CEN. OREGON/N.E. CALIF. PROGNOSIS   RV:02/16/11    01-13-2012  16:16:27
 
 STAND ID: 49                            MGMT ID:          
 
@@ -778,7 +790,7 @@ YEAR  ATTRIBUTES      10     30     50     70     90    100       ATTRIBUTES    
         TOTAL         9.2   12.9   14.6   17.4   20.4    25.3    5388. CUFT      48.% LP3,  36.% LP2,  16.% PP2,   0.% ---
         MERCH        12.1   13.5   15.1   17.4   20.4    25.3    4413. CUFT      52.% LP3,  32.% LP2,  16.% PP2,   0.% ---
         MERCH        12.2   13.6   15.2   17.6   20.4    25.3   22922. BDFT      52.% LP3,  32.% LP2,  16.% PP2,   0.% ---
-        FOREST VEGETATION SIMULATOR     VERSION 3845 -- S. CEN. OREGON/N.E. CALIF. PROGNOSIS   RV:02/16/11    01-12-2012  15:54:44
+        FOREST VEGETATION SIMULATOR     VERSION 3845 -- S. CEN. OREGON/N.E. CALIF. PROGNOSIS   RV:02/16/11    01-13-2012  16:16:37
 
 STAND ID: 49                            MGMT ID:         
 
@@ -1000,7 +1012,7 @@ YEAR   %TILE  SPECIES (INCHES)  (FEET)  RATIO  (INCHES)  %TILE    ACRE   AGE    
         90     LP3      12.06    31.00    36     0.22     30.2    6.69
        100     LP2      25.20    86.44    55     0.25     99.3    1.95
                                                                          100       9.2      381.     176.       82.0    171.7
-        FOREST VEGETATION SIMULATOR     VERSION 3845 -- S. CEN. OREGON/N.E. CALIF. PROGNOSIS   RV:02/16/11    01-12-2012  15:54:44
+        FOREST VEGETATION SIMULATOR     VERSION 3845 -- S. CEN. OREGON/N.E. CALIF. PROGNOSIS   RV:02/16/11    01-13-2012  16:16:37
 
 STAND ID: 49                            MGMT ID:         
 
