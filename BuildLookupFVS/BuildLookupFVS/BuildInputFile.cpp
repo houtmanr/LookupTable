@@ -76,7 +76,7 @@ InputFile::InputFile(int stand)
 			fprintf(input, "FMIN\n"
 						     "FUELOUT\n"
 						     "BURNREPT\n"
-						     "FIRECALC         0        1        0\n"
+						     "FIRECALC         0        1        1\n"
 						     "SOILHEAT\n"
 						   "END\n"
 						   "STRCLASS         1     30.00        5.       16.      20.00       50.      35.00\n"

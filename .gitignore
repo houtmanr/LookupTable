@@ -3,3 +3,10 @@
 *.sln
 *.suo
 \BuildLookupFVS\BuildLookupFVS\Debug*
+*.fvs
+*.bat
+*.in
+*.key
+*.out
+*.sum
+*.trl

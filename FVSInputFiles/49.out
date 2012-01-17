@@ -1,4 +1,4 @@
-        FOREST VEGETATION SIMULATOR     VERSION 3845 -- S. CEN. OREGON/N.E. CALIF. PROGNOSIS   RV:02/16/11    01-13-2012  16:16:27
+        FOREST VEGETATION SIMULATOR     VERSION 3845 -- S. CEN. OREGON/N.E. CALIF. PROGNOSIS   RV:02/16/11    01-17-2012  11:43:22
 
 ----------------------------------------------------------------------------------------------------------------------------------
 
@@ -114,7 +114,7 @@ BURNREPT   THE BURN CONDITIONS REPORT WILL BE WRITTEN WHEN A FIRE OCCURS.
 
 FIRECALC   FIRE CALCULATIONS IN DATE/CYCLE    0 WILL BE:
            BASED ON METHOD 1 (0=OLD FM LOGIC, 1=NEW FM LOGIC, 2=USE MODELLED LOADS DIRECTLY)
-           FUEL MODEL SET (IF USING NEW FM LOGIC) WILL BE 0 (0=13, 1=40, 2=53)
+           FUEL MODEL SET (IF USING NEW FM LOGIC) WILL BE 1 (0=13, 1=40, 2=53)
            ONE-HOUR SAV (1/FT) WILL BE:  2000.
            HERB SAV (1/FT) WILL BE:  1800.
            LIVE WOODY SAV (1/FT) WILL BE:  1500.
@@ -245,7 +245,7 @@ CYCLE  DATE  EXTENSION  KEYWORD   DATE  PARAMETERS:
                CMPU     SDI       2007        0.00
                CMPU     BA        2007        0.00
                CMPU     TPA       2007        0.00
-               FIRE     FIRECALC  2007        1.00      0.00   2000.00   1800.00   1500.00      0.10      0.75   8000.00
+               FIRE     FIRECALC  2007        1.00      1.00   2000.00   1800.00   1500.00      0.10      0.75   8000.00
 
    2   2012
                BASE     TREELIST  2012       50.00      0.00
@@ -258,7 +258,7 @@ CYCLE  DATE  EXTENSION  KEYWORD   DATE  PARAMETERS:
                CMPU     SDI       2012        0.00
                CMPU     BA        2012        0.00
                CMPU     TPA       2012        0.00
-               FIRE     FIRECALC  2012        1.00      0.00   2000.00   1800.00   1500.00      0.10      0.75   8000.00
+               FIRE     FIRECALC  2012        1.00      1.00   2000.00   1800.00   1500.00      0.10      0.75   8000.00
 
    3   2017
                BASE     TREELIST  2017       50.00      0.00
@@ -271,7 +271,7 @@ CYCLE  DATE  EXTENSION  KEYWORD   DATE  PARAMETERS:
                CMPU     SDI       2017        0.00
                CMPU     BA        2017        0.00
                CMPU     TPA       2017        0.00
-               FIRE     FIRECALC  2017        1.00      0.00   2000.00   1800.00   1500.00      0.10      0.75   8000.00
+               FIRE     FIRECALC  2017        1.00      1.00   2000.00   1800.00   1500.00      0.10      0.75   8000.00
 
    4   2022
                BASE     TREELIST  2022       50.00      0.00
@@ -284,7 +284,7 @@ CYCLE  DATE  EXTENSION  KEYWORD   DATE  PARAMETERS:
                CMPU     SDI       2022        0.00
                CMPU     BA        2022        0.00
                CMPU     TPA       2022        0.00
-               FIRE     FIRECALC  2022        1.00      0.00   2000.00   1800.00   1500.00      0.10      0.75   8000.00
+               FIRE     FIRECALC  2022        1.00      1.00   2000.00   1800.00   1500.00      0.10      0.75   8000.00
 
    5   2027
                BASE     TREELIST  2027       50.00      0.00
@@ -297,7 +297,7 @@ CYCLE  DATE  EXTENSION  KEYWORD   DATE  PARAMETERS:
                CMPU     SDI       2027        0.00
                CMPU     BA        2027        0.00
                CMPU     TPA       2027        0.00
-               FIRE     FIRECALC  2027        1.00      0.00   2000.00   1800.00   1500.00      0.10      0.75   8000.00
+               FIRE     FIRECALC  2027        1.00      1.00   2000.00   1800.00   1500.00      0.10      0.75   8000.00
 
    6   2032
                BASE     TREELIST  2032       50.00      0.00
@@ -310,7 +310,7 @@ CYCLE  DATE  EXTENSION  KEYWORD   DATE  PARAMETERS:
                CMPU     SDI       2032        0.00
                CMPU     BA        2032        0.00
                CMPU     TPA       2032        0.00
-               FIRE     FIRECALC  2032        1.00      0.00   2000.00   1800.00   1500.00      0.10      0.75   8000.00
+               FIRE     FIRECALC  2032        1.00      1.00   2000.00   1800.00   1500.00      0.10      0.75   8000.00
 
    7   2037
                BASE     TREELIST  2037       50.00      0.00
@@ -323,7 +323,7 @@ CYCLE  DATE  EXTENSION  KEYWORD   DATE  PARAMETERS:
                CMPU     SDI       2037        0.00
                CMPU     BA        2037        0.00
                CMPU     TPA       2037        0.00
-               FIRE     FIRECALC  2037        1.00      0.00   2000.00   1800.00   1500.00      0.10      0.75   8000.00
+               FIRE     FIRECALC  2037        1.00      1.00   2000.00   1800.00   1500.00      0.10      0.75   8000.00
 
    8   2042
                BASE     TREELIST  2042       50.00      0.00
@@ -336,7 +336,7 @@ CYCLE  DATE  EXTENSION  KEYWORD   DATE  PARAMETERS:
                CMPU     SDI       2042        0.00
                CMPU     BA        2042        0.00
                CMPU     TPA       2042        0.00
-               FIRE     FIRECALC  2042        1.00      0.00   2000.00   1800.00   1500.00      0.10      0.75   8000.00
+               FIRE     FIRECALC  2042        1.00      1.00   2000.00   1800.00   1500.00      0.10      0.75   8000.00
 
    9   2047
                BASE     TREELIST  2047       50.00      0.00
@@ -349,7 +349,7 @@ CYCLE  DATE  EXTENSION  KEYWORD   DATE  PARAMETERS:
                CMPU     SDI       2047        0.00
                CMPU     BA        2047        0.00
                CMPU     TPA       2047        0.00
-               FIRE     FIRECALC  2047        1.00      0.00   2000.00   1800.00   1500.00      0.10      0.75   8000.00
+               FIRE     FIRECALC  2047        1.00      1.00   2000.00   1800.00   1500.00      0.10      0.75   8000.00
 
   10   2052
                BASE     TREELIST  2052       50.00      0.00
@@ -362,7 +362,7 @@ CYCLE  DATE  EXTENSION  KEYWORD   DATE  PARAMETERS:
                CMPU     SDI       2052        0.00
                CMPU     BA        2052        0.00
                CMPU     TPA       2052        0.00
-               FIRE     FIRECALC  2052        1.00      0.00   2000.00   1800.00   1500.00      0.10      0.75   8000.00
+               FIRE     FIRECALC  2052        1.00      1.00   2000.00   1800.00   1500.00      0.10      0.75   8000.00
 
   11   2057
                BASE     TREELIST  2057       50.00      0.00
@@ -375,7 +375,7 @@ CYCLE  DATE  EXTENSION  KEYWORD   DATE  PARAMETERS:
                CMPU     SDI       2057        0.00
                CMPU     BA        2057        0.00
                CMPU     TPA       2057        0.00
-               FIRE     FIRECALC  2057        1.00      0.00   2000.00   1800.00   1500.00      0.10      0.75   8000.00
+               FIRE     FIRECALC  2057        1.00      1.00   2000.00   1800.00   1500.00      0.10      0.75   8000.00
 
   12   2062
                BASE     TREELIST  2062       50.00      0.00
@@ -388,7 +388,7 @@ CYCLE  DATE  EXTENSION  KEYWORD   DATE  PARAMETERS:
                CMPU     SDI       2062        0.00
                CMPU     BA        2062        0.00
                CMPU     TPA       2062        0.00
-               FIRE     FIRECALC  2062        1.00      0.00   2000.00   1800.00   1500.00      0.10      0.75   8000.00
+               FIRE     FIRECALC  2062        1.00      1.00   2000.00   1800.00   1500.00      0.10      0.75   8000.00
 
   13   2067
                BASE     TREELIST  2067       50.00      0.00
@@ -401,7 +401,7 @@ CYCLE  DATE  EXTENSION  KEYWORD   DATE  PARAMETERS:
                CMPU     SDI       2067        0.00
                CMPU     BA        2067        0.00
                CMPU     TPA       2067        0.00
-               FIRE     FIRECALC  2067        1.00      0.00   2000.00   1800.00   1500.00      0.10      0.75   8000.00
+               FIRE     FIRECALC  2067        1.00      1.00   2000.00   1800.00   1500.00      0.10      0.75   8000.00
 
   14   2072
                BASE     TREELIST  2072       50.00      0.00
@@ -414,7 +414,7 @@ CYCLE  DATE  EXTENSION  KEYWORD   DATE  PARAMETERS:
                CMPU     SDI       2072        0.00
                CMPU     BA        2072        0.00
                CMPU     TPA       2072        0.00
-               FIRE     FIRECALC  2072        1.00      0.00   2000.00   1800.00   1500.00      0.10      0.75   8000.00
+               FIRE     FIRECALC  2072        1.00      1.00   2000.00   1800.00   1500.00      0.10      0.75   8000.00
 
   15   2077
                BASE     TREELIST  2077       50.00      0.00
@@ -427,7 +427,7 @@ CYCLE  DATE  EXTENSION  KEYWORD   DATE  PARAMETERS:
                CMPU     SDI       2077        0.00
                CMPU     BA        2077        0.00
                CMPU     TPA       2077        0.00
-               FIRE     FIRECALC  2077        1.00      0.00   2000.00   1800.00   1500.00      0.10      0.75   8000.00
+               FIRE     FIRECALC  2077        1.00      1.00   2000.00   1800.00   1500.00      0.10      0.75   8000.00
 
   16   2082
                BASE     TREELIST  2082       50.00      0.00
@@ -440,7 +440,7 @@ CYCLE  DATE  EXTENSION  KEYWORD   DATE  PARAMETERS:
                CMPU     SDI       2082        0.00
                CMPU     BA        2082        0.00
                CMPU     TPA       2082        0.00
-               FIRE     FIRECALC  2082        1.00      0.00   2000.00   1800.00   1500.00      0.10      0.75   8000.00
+               FIRE     FIRECALC  2082        1.00      1.00   2000.00   1800.00   1500.00      0.10      0.75   8000.00
 
   17   2087
                BASE     TREELIST  2087       50.00      0.00
@@ -453,7 +453,7 @@ CYCLE  DATE  EXTENSION  KEYWORD   DATE  PARAMETERS:
                CMPU     SDI       2087        0.00
                CMPU     BA        2087        0.00
                CMPU     TPA       2087        0.00
-               FIRE     FIRECALC  2087        1.00      0.00   2000.00   1800.00   1500.00      0.10      0.75   8000.00
+               FIRE     FIRECALC  2087        1.00      1.00   2000.00   1800.00   1500.00      0.10      0.75   8000.00
 
   18   2092
                BASE     TREELIST  2092       50.00      0.00
@@ -466,7 +466,7 @@ CYCLE  DATE  EXTENSION  KEYWORD   DATE  PARAMETERS:
                CMPU     SDI       2092        0.00
                CMPU     BA        2092        0.00
                CMPU     TPA       2092        0.00
-               FIRE     FIRECALC  2092        1.00      0.00   2000.00   1800.00   1500.00      0.10      0.75   8000.00
+               FIRE     FIRECALC  2092        1.00      1.00   2000.00   1800.00   1500.00      0.10      0.75   8000.00
 
   19   2097
                BASE     TREELIST  2097       50.00      0.00
@@ -479,7 +479,7 @@ CYCLE  DATE  EXTENSION  KEYWORD   DATE  PARAMETERS:
                CMPU     SDI       2097        0.00
                CMPU     BA        2097        0.00
                CMPU     TPA       2097        0.00
-               FIRE     FIRECALC  2097        1.00      0.00   2000.00   1800.00   1500.00      0.10      0.75   8000.00
+               FIRE     FIRECALC  2097        1.00      1.00   2000.00   1800.00   1500.00      0.10      0.75   8000.00
 
   20   2102
                BASE     TREELIST  2102       50.00      0.00
@@ -492,7 +492,7 @@ CYCLE  DATE  EXTENSION  KEYWORD   DATE  PARAMETERS:
                CMPU     SDI       2102        0.00
                CMPU     BA        2102        0.00
                CMPU     TPA       2102        0.00
-               FIRE     FIRECALC  2102        1.00      0.00   2000.00   1800.00   1500.00      0.10      0.75   8000.00
+               FIRE     FIRECALC  2102        1.00      1.00   2000.00   1800.00   1500.00      0.10      0.75   8000.00
 ----------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -529,7 +529,7 @@ INITIAL SCALE FACTORS FOR THE SMALL TREE
 HEIGHT INCREMENT MODEL                          1.00  1.00
 
 NUMBER OF RECORDS WITH MISTLETOE                   0     0
-        FOREST VEGETATION SIMULATOR     VERSION 3845 -- S. CEN. OREGON/N.E. CALIF. PROGNOSIS   RV:02/16/11    01-13-2012  16:16:27
+        FOREST VEGETATION SIMULATOR     VERSION 3845 -- S. CEN. OREGON/N.E. CALIF. PROGNOSIS   RV:02/16/11    01-17-2012  11:43:22
 
 STAND ID: 49                            MGMT ID:          
 
@@ -790,7 +790,7 @@ YEAR  ATTRIBUTES      10     30     50     70     90    100       ATTRIBUTES    
         TOTAL         9.2   12.9   14.6   17.4   20.4    25.3    5388. CUFT      48.% LP3,  36.% LP2,  16.% PP2,   0.% ---
         MERCH        12.1   13.5   15.1   17.4   20.4    25.3    4413. CUFT      52.% LP3,  32.% LP2,  16.% PP2,   0.% ---
         MERCH        12.2   13.6   15.2   17.6   20.4    25.3   22922. BDFT      52.% LP3,  32.% LP2,  16.% PP2,   0.% ---
-        FOREST VEGETATION SIMULATOR     VERSION 3845 -- S. CEN. OREGON/N.E. CALIF. PROGNOSIS   RV:02/16/11    01-13-2012  16:16:37
+        FOREST VEGETATION SIMULATOR     VERSION 3845 -- S. CEN. OREGON/N.E. CALIF. PROGNOSIS   RV:02/16/11    01-17-2012  11:43:32
 
 STAND ID: 49                            MGMT ID:         
 
@@ -1012,7 +1012,7 @@ YEAR   %TILE  SPECIES (INCHES)  (FEET)  RATIO  (INCHES)  %TILE    ACRE   AGE    
         90     LP3      12.06    31.00    36     0.22     30.2    6.69
        100     LP2      25.20    86.44    55     0.25     99.3    1.95
                                                                          100       9.2      381.     176.       82.0    171.7
-        FOREST VEGETATION SIMULATOR     VERSION 3845 -- S. CEN. OREGON/N.E. CALIF. PROGNOSIS   RV:02/16/11    01-13-2012  16:16:37
+        FOREST VEGETATION SIMULATOR     VERSION 3845 -- S. CEN. OREGON/N.E. CALIF. PROGNOSIS   RV:02/16/11    01-17-2012  11:43:32
 
 STAND ID: 49                            MGMT ID:         
 
@@ -1068,12 +1068,12 @@ CYCLE  DATE  EXTENSION  KEYWORD   DATE  ACTIVITY DISPOSITION  PARAMETERS:
                CMPU     TPA       2007  DONE IN 2007             1623.13
                CMPU     CANOPY    2007  DONE IN 2007               30.00
                CMPU     HTT       2007  DONE IN 2007               55.89
-               FIRE     FIRECALC  2007  DONE IN 2007                1.00      0.00   2000.00   1800.00   1500.00      0.10
+               FIRE     FIRECALC  2007  DONE IN 2007                1.00      1.00   2000.00   1800.00   1500.00      0.10
                                                                     0.75   8000.00
                FIRE     SOILHEAT  2007  DONE IN 2007              200.00      3.00
                FIRE     BURNREPT  2007  DONE IN 2007              200.00
                FIRE     FUELOUT   2007  DONE IN 2007              200.00      1.00
-               CMPU     FML       2007  DONE IN 2007                5.00
+               CMPU     FML       2007  DONE IN 2007              141.00
                CMPU     HTLIVE    2007  DONE IN 2007                5.00
                CMPU     CBD       2007  DONE IN 2007                0.05
                BASE     TREELIST  2007  DONE IN 2011               50.00      0.00
@@ -1085,9 +1085,9 @@ CYCLE  DATE  EXTENSION  KEYWORD   DATE  ACTIVITY DISPOSITION  PARAMETERS:
                CMPU     TPA       2012  DONE IN 2012             1621.85
                CMPU     CANOPY    2012  DONE IN 2012               34.00
                CMPU     HTT       2012  DONE IN 2012               56.31
-               FIRE     FIRECALC  2012  DONE IN 2012                1.00      0.00   2000.00   1800.00   1500.00      0.10
+               FIRE     FIRECALC  2012  DONE IN 2012                1.00      1.00   2000.00   1800.00   1500.00      0.10
                                                                     0.75   8000.00
-               CMPU     FML       2012  DONE IN 2012                5.00
+               CMPU     FML       2012  DONE IN 2012              141.00
                CMPU     HTLIVE    2012  DONE IN 2012                4.00
                CMPU     CBD       2012  DONE IN 2012                0.05
                BASE     TREELIST  2012  DONE IN 2016               50.00      0.00
@@ -1099,9 +1099,9 @@ CYCLE  DATE  EXTENSION  KEYWORD   DATE  ACTIVITY DISPOSITION  PARAMETERS:
                CMPU     TPA       2017  DONE IN 2017             1541.64
                CMPU     CANOPY    2017  DONE IN 2017               40.00
                CMPU     HTT       2017  DONE IN 2017               58.02
-               FIRE     FIRECALC  2017  DONE IN 2017                1.00      0.00   2000.00   1800.00   1500.00      0.10
+               FIRE     FIRECALC  2017  DONE IN 2017                1.00      1.00   2000.00   1800.00   1500.00      0.10
                                                                     0.75   8000.00
-               CMPU     FML       2017  DONE IN 2017                5.00
+               CMPU     FML       2017  DONE IN 2017              122.00
                CMPU     HTLIVE    2017  DONE IN 2017                5.00
                CMPU     CBD       2017  DONE IN 2017                0.09
                BASE     TREELIST  2017  DONE IN 2021               50.00      0.00
@@ -1113,9 +1113,9 @@ CYCLE  DATE  EXTENSION  KEYWORD   DATE  ACTIVITY DISPOSITION  PARAMETERS:
                CMPU     TPA       2022  DONE IN 2022             1445.68
                CMPU     CANOPY    2022  DONE IN 2022               45.00
                CMPU     HTT       2022  DONE IN 2022               60.27
-               FIRE     FIRECALC  2022  DONE IN 2022                1.00      0.00   2000.00   1800.00   1500.00      0.10
+               FIRE     FIRECALC  2022  DONE IN 2022                1.00      1.00   2000.00   1800.00   1500.00      0.10
                                                                     0.75   8000.00
-               CMPU     FML       2022  DONE IN 2022                5.00
+               CMPU     FML       2022  DONE IN 2022              122.00
                CMPU     HTLIVE    2022  DONE IN 2022                6.00
                CMPU     CBD       2022  DONE IN 2022                0.08
                BASE     TREELIST  2022  DONE IN 2026               50.00      0.00
@@ -1127,9 +1127,9 @@ CYCLE  DATE  EXTENSION  KEYWORD   DATE  ACTIVITY DISPOSITION  PARAMETERS:
                CMPU     TPA       2027  DONE IN 2027             1369.16
                CMPU     CANOPY    2027  DONE IN 2027               47.00
                CMPU     HTT       2027  DONE IN 2027               62.40
-               FIRE     FIRECALC  2027  DONE IN 2027                1.00      0.00   2000.00   1800.00   1500.00      0.10
+               FIRE     FIRECALC  2027  DONE IN 2027                1.00      1.00   2000.00   1800.00   1500.00      0.10
                                                                     0.75   8000.00
-               CMPU     FML       2027  DONE IN 2027                5.00
+               CMPU     FML       2027  DONE IN 2027              122.00
                CMPU     HTLIVE    2027  DONE IN 2027                6.00
                CMPU     CBD       2027  DONE IN 2027                0.08
                BASE     TREELIST  2027  DONE IN 2031               50.00      0.00
@@ -1141,9 +1141,9 @@ CYCLE  DATE  EXTENSION  KEYWORD   DATE  ACTIVITY DISPOSITION  PARAMETERS:
                CMPU     TPA       2032  DONE IN 2032             1304.38
                CMPU     CANOPY    2032  DONE IN 2032               49.00
                CMPU     HTT       2032  DONE IN 2032               64.41
-               FIRE     FIRECALC  2032  DONE IN 2032                1.00      0.00   2000.00   1800.00   1500.00      0.10
+               FIRE     FIRECALC  2032  DONE IN 2032                1.00      1.00   2000.00   1800.00   1500.00      0.10
                                                                     0.75   8000.00
-               CMPU     FML       2032  DONE IN 2032                5.00
+               CMPU     FML       2032  DONE IN 2032              122.00
                CMPU     HTLIVE    2032  DONE IN 2032                7.00
                CMPU     CBD       2032  DONE IN 2032                0.08
                BASE     TREELIST  2032  DONE IN 2036               50.00      0.00
@@ -1155,9 +1155,9 @@ CYCLE  DATE  EXTENSION  KEYWORD   DATE  ACTIVITY DISPOSITION  PARAMETERS:
                CMPU     TPA       2037  DONE IN 2037             1249.99
                CMPU     CANOPY    2037  DONE IN 2037               51.00
                CMPU     HTT       2037  DONE IN 2037               66.33
-               FIRE     FIRECALC  2037  DONE IN 2037                1.00      0.00   2000.00   1800.00   1500.00      0.10
+               FIRE     FIRECALC  2037  DONE IN 2037                1.00      1.00   2000.00   1800.00   1500.00      0.10
                                                                     0.75   8000.00
-               CMPU     FML       2037  DONE IN 2037                5.00
+               CMPU     FML       2037  DONE IN 2037              122.00
                CMPU     HTLIVE    2037  DONE IN 2037                9.00
                CMPU     CBD       2037  DONE IN 2037                0.07
                BASE     TREELIST  2037  DONE IN 2041               50.00      0.00
@@ -1169,9 +1169,9 @@ CYCLE  DATE  EXTENSION  KEYWORD   DATE  ACTIVITY DISPOSITION  PARAMETERS:
                CMPU     TPA       2042  DONE IN 2042             1201.18
                CMPU     CANOPY    2042  DONE IN 2042               53.00
                CMPU     HTT       2042  DONE IN 2042               67.91
-               FIRE     FIRECALC  2042  DONE IN 2042                1.00      0.00   2000.00   1800.00   1500.00      0.10
+               FIRE     FIRECALC  2042  DONE IN 2042                1.00      1.00   2000.00   1800.00   1500.00      0.10
                                                                     0.75   8000.00
-               CMPU     FML       2042  DONE IN 2042                5.00
+               CMPU     FML       2042  DONE IN 2042              122.00
                CMPU     HTLIVE    2042  DONE IN 2042               10.00
                CMPU     CBD       2042  DONE IN 2042                0.07
                BASE     TREELIST  2042  DONE IN 2046               50.00      0.00
@@ -1183,9 +1183,9 @@ CYCLE  DATE  EXTENSION  KEYWORD   DATE  ACTIVITY DISPOSITION  PARAMETERS:
                CMPU     TPA       2047  DONE IN 2047             1103.95
                CMPU     CANOPY    2047  DONE IN 2047               53.00
                CMPU     HTT       2047  DONE IN 2047               69.48
-               FIRE     FIRECALC  2047  DONE IN 2047                1.00      0.00   2000.00   1800.00   1500.00      0.10
+               FIRE     FIRECALC  2047  DONE IN 2047                1.00      1.00   2000.00   1800.00   1500.00      0.10
                                                                     0.75   8000.00
-               CMPU     FML       2047  DONE IN 2047                5.00
+               CMPU     FML       2047  DONE IN 2047              122.00
                CMPU     HTLIVE    2047  DONE IN 2047               11.00
                CMPU     CBD       2047  DONE IN 2047                0.07
                BASE     TREELIST  2047  DONE IN 2051               50.00      0.00
@@ -1197,9 +1197,9 @@ CYCLE  DATE  EXTENSION  KEYWORD   DATE  ACTIVITY DISPOSITION  PARAMETERS:
                CMPU     TPA       2052  DONE IN 2052              964.55
                CMPU     CANOPY    2052  DONE IN 2052               52.00
                CMPU     HTT       2052  DONE IN 2052               70.93
-               FIRE     FIRECALC  2052  DONE IN 2052                1.00      0.00   2000.00   1800.00   1500.00      0.10
+               FIRE     FIRECALC  2052  DONE IN 2052                1.00      1.00   2000.00   1800.00   1500.00      0.10
                                                                     0.75   8000.00
-               CMPU     FML       2052  DONE IN 2052                5.00
+               CMPU     FML       2052  DONE IN 2052              122.00
                CMPU     HTLIVE    2052  DONE IN 2052               12.00
                CMPU     CBD       2052  DONE IN 2052                0.08
                BASE     TREELIST  2052  DONE IN 2056               50.00      0.00
@@ -1211,9 +1211,9 @@ CYCLE  DATE  EXTENSION  KEYWORD   DATE  ACTIVITY DISPOSITION  PARAMETERS:
                CMPU     TPA       2057  DONE IN 2057              892.29
                CMPU     CANOPY    2057  DONE IN 2057               52.00
                CMPU     HTT       2057  DONE IN 2057               72.34
-               FIRE     FIRECALC  2057  DONE IN 2057                1.00      0.00   2000.00   1800.00   1500.00      0.10
+               FIRE     FIRECALC  2057  DONE IN 2057                1.00      1.00   2000.00   1800.00   1500.00      0.10
                                                                     0.75   8000.00
-               CMPU     FML       2057  DONE IN 2057                5.00
+               CMPU     FML       2057  DONE IN 2057              122.00
                CMPU     HTLIVE    2057  DONE IN 2057               13.00
                CMPU     CBD       2057  DONE IN 2057                0.08
                BASE     TREELIST  2057  DONE IN 2061               50.00      0.00
@@ -1225,9 +1225,9 @@ CYCLE  DATE  EXTENSION  KEYWORD   DATE  ACTIVITY DISPOSITION  PARAMETERS:
                CMPU     TPA       2062  DONE IN 2062              788.53
                CMPU     CANOPY    2062  DONE IN 2062               51.00
                CMPU     HTT       2062  DONE IN 2062               73.50
-               FIRE     FIRECALC  2062  DONE IN 2062                1.00      0.00   2000.00   1800.00   1500.00      0.10
+               FIRE     FIRECALC  2062  DONE IN 2062                1.00      1.00   2000.00   1800.00   1500.00      0.10
                                                                     0.75   8000.00
-               CMPU     FML       2062  DONE IN 2062                5.00
+               CMPU     FML       2062  DONE IN 2062              122.00
                CMPU     HTLIVE    2062  DONE IN 2062               13.00
                CMPU     CBD       2062  DONE IN 2062                0.08
                BASE     TREELIST  2062  DONE IN 2066               50.00      0.00
@@ -1239,9 +1239,9 @@ CYCLE  DATE  EXTENSION  KEYWORD   DATE  ACTIVITY DISPOSITION  PARAMETERS:
                CMPU     TPA       2067  DONE IN 2067              735.43
                CMPU     CANOPY    2067  DONE IN 2067               51.00
                CMPU     HTT       2067  DONE IN 2067               74.80
-               FIRE     FIRECALC  2067  DONE IN 2067                1.00      0.00   2000.00   1800.00   1500.00      0.10
+               FIRE     FIRECALC  2067  DONE IN 2067                1.00      1.00   2000.00   1800.00   1500.00      0.10
                                                                     0.75   8000.00
-               CMPU     FML       2067  DONE IN 2067                5.00
+               CMPU     FML       2067  DONE IN 2067              122.00
                CMPU     HTLIVE    2067  DONE IN 2067               14.00
                CMPU     CBD       2067  DONE IN 2067                0.08
                BASE     TREELIST  2067  DONE IN 2071               50.00      0.00
@@ -1253,9 +1253,9 @@ CYCLE  DATE  EXTENSION  KEYWORD   DATE  ACTIVITY DISPOSITION  PARAMETERS:
                CMPU     TPA       2072  DONE IN 2072              657.90
                CMPU     CANOPY    2072  DONE IN 2072               50.00
                CMPU     HTT       2072  DONE IN 2072               76.04
-               FIRE     FIRECALC  2072  DONE IN 2072                1.00      0.00   2000.00   1800.00   1500.00      0.10
+               FIRE     FIRECALC  2072  DONE IN 2072                1.00      1.00   2000.00   1800.00   1500.00      0.10
                                                                     0.75   8000.00
-               CMPU     FML       2072  DONE IN 2072                5.00
+               CMPU     FML       2072  DONE IN 2072              122.00
                CMPU     HTLIVE    2072  DONE IN 2072               15.00
                CMPU     CBD       2072  DONE IN 2072                0.08
                BASE     TREELIST  2072  DONE IN 2076               50.00      0.00
@@ -1267,9 +1267,9 @@ CYCLE  DATE  EXTENSION  KEYWORD   DATE  ACTIVITY DISPOSITION  PARAMETERS:
                CMPU     TPA       2077  DONE IN 2077              602.24
                CMPU     CANOPY    2077  DONE IN 2077               50.00
                CMPU     HTT       2077  DONE IN 2077               77.08
-               FIRE     FIRECALC  2077  DONE IN 2077                1.00      0.00   2000.00   1800.00   1500.00      0.10
+               FIRE     FIRECALC  2077  DONE IN 2077                1.00      1.00   2000.00   1800.00   1500.00      0.10
                                                                     0.75   8000.00
-               CMPU     FML       2077  DONE IN 2077                5.00
+               CMPU     FML       2077  DONE IN 2077              122.00
                CMPU     HTLIVE    2077  DONE IN 2077               15.00
                CMPU     CBD       2077  DONE IN 2077                0.08
                BASE     TREELIST  2077  DONE IN 2081               50.00      0.00
@@ -1281,9 +1281,9 @@ CYCLE  DATE  EXTENSION  KEYWORD   DATE  ACTIVITY DISPOSITION  PARAMETERS:
                CMPU     TPA       2082  DONE IN 2082              567.40
                CMPU     CANOPY    2082  DONE IN 2082               50.00
                CMPU     HTT       2082  DONE IN 2082               78.09
-               FIRE     FIRECALC  2082  DONE IN 2082                1.00      0.00   2000.00   1800.00   1500.00      0.10
+               FIRE     FIRECALC  2082  DONE IN 2082                1.00      1.00   2000.00   1800.00   1500.00      0.10
                                                                     0.75   8000.00
-               CMPU     FML       2082  DONE IN 2082                5.00
+               CMPU     FML       2082  DONE IN 2082              122.00
                CMPU     HTLIVE    2082  DONE IN 2082               16.00
                CMPU     CBD       2082  DONE IN 2082                0.08
                BASE     TREELIST  2082  DONE IN 2086               50.00      0.00
@@ -1295,9 +1295,9 @@ CYCLE  DATE  EXTENSION  KEYWORD   DATE  ACTIVITY DISPOSITION  PARAMETERS:
                CMPU     TPA       2087  DONE IN 2087              513.26
                CMPU     CANOPY    2087  DONE IN 2087               49.00
                CMPU     HTT       2087  DONE IN 2087               78.93
-               FIRE     FIRECALC  2087  DONE IN 2087                1.00      0.00   2000.00   1800.00   1500.00      0.10
+               FIRE     FIRECALC  2087  DONE IN 2087                1.00      1.00   2000.00   1800.00   1500.00      0.10
                                                                     0.75   8000.00
-               CMPU     FML       2087  DONE IN 2087                5.00
+               CMPU     FML       2087  DONE IN 2087              122.00
                CMPU     HTLIVE    2087  DONE IN 2087               17.00
                CMPU     CBD       2087  DONE IN 2087                0.09
                BASE     TREELIST  2087  DONE IN 2091               50.00      0.00
@@ -1309,9 +1309,9 @@ CYCLE  DATE  EXTENSION  KEYWORD   DATE  ACTIVITY DISPOSITION  PARAMETERS:
                CMPU     TPA       2092  DONE IN 2092              473.66
                CMPU     CANOPY    2092  DONE IN 2092               49.00
                CMPU     HTT       2092  DONE IN 2092               79.82
-               FIRE     FIRECALC  2092  DONE IN 2092                1.00      0.00   2000.00   1800.00   1500.00      0.10
+               FIRE     FIRECALC  2092  DONE IN 2092                1.00      1.00   2000.00   1800.00   1500.00      0.10
                                                                     0.75   8000.00
-               CMPU     FML       2092  DONE IN 2092                5.00
+               CMPU     FML       2092  DONE IN 2092              122.00
                CMPU     HTLIVE    2092  DONE IN 2092               17.00
                CMPU     CBD       2092  DONE IN 2092                0.09
                BASE     TREELIST  2092  DONE IN 2096               50.00      0.00
@@ -1323,9 +1323,9 @@ CYCLE  DATE  EXTENSION  KEYWORD   DATE  ACTIVITY DISPOSITION  PARAMETERS:
                CMPU     TPA       2097  DONE IN 2097              439.48
                CMPU     CANOPY    2097  DONE IN 2097               49.00
                CMPU     HTT       2097  DONE IN 2097               80.49
-               FIRE     FIRECALC  2097  DONE IN 2097                1.00      0.00   2000.00   1800.00   1500.00      0.10
+               FIRE     FIRECALC  2097  DONE IN 2097                1.00      1.00   2000.00   1800.00   1500.00      0.10
                                                                     0.75   8000.00
-               CMPU     FML       2097  DONE IN 2097                5.00
+               CMPU     FML       2097  DONE IN 2097              122.00
                CMPU     HTLIVE    2097  DONE IN 2097               18.00
                CMPU     CBD       2097  DONE IN 2097                0.09
                BASE     TREELIST  2097  DONE IN 2101               50.00      0.00
@@ -1337,9 +1337,9 @@ CYCLE  DATE  EXTENSION  KEYWORD   DATE  ACTIVITY DISPOSITION  PARAMETERS:
                CMPU     TPA       2102  DONE IN 2102              408.99
                CMPU     CANOPY    2102  DONE IN 2102               49.00
                CMPU     HTT       2102  DONE IN 2102               81.27
-               FIRE     FIRECALC  2102  DONE IN 2102                1.00      0.00   2000.00   1800.00   1500.00      0.10
+               FIRE     FIRECALC  2102  DONE IN 2102                1.00      1.00   2000.00   1800.00   1500.00      0.10
                                                                     0.75   8000.00
-               CMPU     FML       2102  DONE IN 2102                5.00
+               CMPU     FML       2102  DONE IN 2102              122.00
                CMPU     HTLIVE    2102  DONE IN 2102               19.00
                CMPU     CBD       2102  DONE IN 2102                0.09
                BASE     TREELIST  2102  DONE IN 2106               50.00      0.00
