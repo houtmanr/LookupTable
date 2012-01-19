@@ -14,16 +14,16 @@ int _tmain(int argc, _TCHAR* argv[])
 {
 
 	char fvs[100]; 
-	int standNumber = 49;
-	//FILE* standlist;
+	int standNumber;
+	FILE* standlist;
 
-	// File containing stands to be simulated.
-	//fopen_s(&standlist, "N:\\FireProject_Part2\\BuildLookupFVS\\standList.txt", "r");
+	 //File containing stands to be simulated.
+	 fopen_s(&standlist, "..\\..\\BuildLookupFVS\\standList.txt", "r");
 
 	// For each stand do this loop.
-	//while(!feof(standlist))
-	//{
-	//	fscanf_s(standlist, "%d\n", &standNumber);
+	while(!feof(standlist))
+	{
+		fscanf_s(standlist, "%d\n", &standNumber);
 		InputFile* fileCreator = new InputFile(standNumber);
 
 		sprintf_s(fvs, "..\\..\\FVSInputFiles\\%d.bat", standNumber);
@@ -32,11 +32,14 @@ int _tmain(int argc, _TCHAR* argv[])
 		system(fvs);
 
 		fileCreator->~InputFile();
-	//}
+	}
 
-	//fclose(standlist);
-	DBase openMDB;
+	fclose(standlist);
+	//DBase openMDB;
+
+	//getchar();
 
 	return 0;
+
 }
 
