@@ -2,6 +2,7 @@
 \BuildLookupFVS\Debug*
 *.sln
 *.suo
+*.exe
 \BuildLookupFVS\BuildLookupFVS\Debug*
 *.fvs
 *.bat
@@ -10,3 +11,9 @@
 *.out
 *.sum
 *.trl
+*.8
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.50
+*.pdb
