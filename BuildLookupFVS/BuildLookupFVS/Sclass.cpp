@@ -18,8 +18,6 @@ Sclass::Sclass(){
 
 void Sclass::processSuccession(){
 
-  DBase processMDB;
-
   int size_class;
   int density_class;
   char succession_class[2];
@@ -44,10 +42,10 @@ void Sclass::processSuccession(){
   int j = 0;
   while(k<=j)
   {
-    int year_count = processMDB.getYear();
-    int tree_cn_count = tree_cn;
+    int year_count = year;
+    int treeCn_count = treeCn;
 
-    while(processMDB.getYear() == year_count)
+    while(year == year_count)
     {
       pp_tpa21 = 0;
       pp_cover21 = 0;
@@ -58,13 +56,13 @@ void Sclass::processSuccession(){
       {
         total1 = 0;
 
-        while(species == 1 && processMDB.getYear() == year_count)
+        while(species == 1 && year == year_count)
         {
           total1 = total1 + cover;
 
           if(dbh >= 21)
           {
-            pp_tpa21 = pp_tpa21 + tree_count;
+            pp_tpa21 = pp_tpa21 + treeCount;
             pp_cover21 = pp_cover21 + cover;
           }
 
@@ -95,13 +93,13 @@ void Sclass::processSuccession(){
       {
         total2 = 0;
 				
-        while(species == 2 && processMDB.getYear() == year_count)
+        while(species == 2 && year == year_count)
         {
           total2 = total2 + cover;
 
           if(dbh >= 21)
           {
-            lp_tpa21 = lp_tpa21 + tree_count;
+            lp_tpa21 = lp_tpa21 + treeCount;
             lp_cover21 = lp_cover21 + cover;
           }
           else if(dbh >= 5 && dbh < 21)
@@ -129,13 +127,13 @@ void Sclass::processSuccession(){
       {
         total3 = 0;
 				
-        while(species > 2 && processMDB.getYear() == year_count)
+        while(species > 2 && year == year_count)
         {
           total3 = total3 + cover;
 
           if(dbh >= 21)
           {
-            other_tpa21 = other_tpa21 + tree_count;
+            other_tpa21 = other_tpa21 + treeCount;
             other_cover21 = other_cover21 + cover;
           }
           else if(dbh >= 5 && dbh < 21)
@@ -235,7 +233,7 @@ void Sclass::processSuccession(){
     }
 
    
-      tree_cn_count, year_count, total1, total2, total3, total, 
+      treeCn_count, year_count, total1, total2, total3, total, 
       total_percent_cover, percent_ponderosa, percent_lodgepole, percent_other, 
       pp_tpa21, lp_tpa21, other_tpa21, total_tpa21,
       pp_cover21, lp_cover21, other_cover21, total_cover21, total_cover21_percent,
@@ -244,4 +242,15 @@ void Sclass::processSuccession(){
       size_class, density_class, succession_class;
   }
 	
+};
+
+Sclass::Sclass(int pTreeCn, int pFml, double pHeight, double pHeightLive, double pCbd){
+  treeCn = pTreeCn;
+  fml = pFml;
+  height = pHeight;
+  heightLive = pHeightLive;
+  cbd = pCbd;
+};
+
+Sclass::~Sclass(){
 };

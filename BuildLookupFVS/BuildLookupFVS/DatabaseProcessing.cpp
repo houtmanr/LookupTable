@@ -65,8 +65,12 @@ DBase::DBase()
       cout<<DAM<<": Fetch the actual data: "<<endl;
       CDBVariant var;
       CString value;
-	  vector<charicteristic> charicterVector;
-	  charicteristic charicter;
+	  int lTreeCn;
+	  int lFml;
+	  double lHeight;
+	  double lHeightLive;
+	  double lCbd;
+	  vector<Sclass> sclassVector;
 
       int rowCount = 0;
       while (!rs.IsEOF())
@@ -86,24 +90,26 @@ DBase::DBase()
               value = "";
           }
           cout<<" | "<<CStringA(value);
-		  if(nIndex = 0)
-			  charicter.treeCn = _wtoi(value);
-		  if(nIndex = 1)
-			  charicter.fml = _wtoi(value);
-		  if(nIndex = 2)
-			  charicter.height = _wtof(value);
-		  if(nIndex = 3)
-			  charicter.heightLive = _wtof(value);
-		  if(nIndex = 4)
-			  charicter.cbd = _wtof(value);
+		  if(nIndex == 0)
+			  lTreeCn = _wtoi(value);
+		  if(nIndex == 1)
+			  lFml = _wtoi(value);
+		  if(nIndex == 2)
+			  lHeight = _wtof(value);
+		  if(nIndex == 3)
+			  lHeightLive = _wtof(value);
+		  if(nIndex == 4)
+			  lCbd = _wtof(value);
         }
         cout<<endl;
         rowCount++;
         rs.MoveNext();
-        charicterVector.push_back(charicter);
+		Sclass successionClass = Sclass(lTreeCn, lFml, lHeight, lHeightLive,lCbd);
+		sclassVector.push_back(successionClass);
       }
       cout<<DAM<<": Total Row Count: "<<rowCount<<endl;
-    }
+	  
+	}
   }
   CATCH_ALL(e)
   {
@@ -116,19 +122,6 @@ DBase::DBase()
   inputs.Close();
 };
 
-int DBase::getYear(){
-  return year;
-};
-
-
-
-
-void DBase::Charicteristics(int standId){
-
-
-
-
-};
 
 /**
 * Destructor
@@ -137,3 +130,4 @@ void DBase::Charicteristics(int standId){
 DBase::~DBase()
 {	
 };
+
