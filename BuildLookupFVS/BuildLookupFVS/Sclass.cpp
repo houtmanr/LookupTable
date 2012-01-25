@@ -16,7 +16,7 @@ Sclass::Sclass(){
 	
 };
 
-void Sclass::processSuccession(){
+void Sclass::processSuccession(vector<Sclass> charicteristics){
 
   int size_class;
   int density_class;
@@ -40,40 +40,41 @@ void Sclass::processSuccession(){
 
   int k = 0;
   int j = 0;
+  int i = 0;
   while(k<=j)
   {
-    int year_count = year;
-    int treeCn_count = treeCn;
+    int year_count = charicteristics.at(i).year;
+    int treeCn_count = charicteristics.at(i).treeCn;
 
-    while(year == year_count)
+    while(charicteristics.at(i).year == year_count)
     {
       pp_tpa21 = 0;
       pp_cover21 = 0;
       pp_cover5to21 = 0;
       pp_cover0to5 = 0;
 
-      if(species == 1)
+      if(charicteristics.at(i).species == 1)
       {
         total1 = 0;
 
-        while(species == 1 && year == year_count)
+        while(charicteristics.at(i).species == 1 && charicteristics.at(i).year == year_count)
         {
-          total1 = total1 + cover;
+          total1 = total1 + charicteristics.at(i).cover;
 
-          if(dbh >= 21)
+          if(charicteristics.at(i).dbh >= 21)
           {
-            pp_tpa21 = pp_tpa21 + treeCount;
-            pp_cover21 = pp_cover21 + cover;
+            pp_tpa21 = pp_tpa21 + charicteristics.at(i).treeCount;
+            pp_cover21 = pp_cover21 + charicteristics.at(i).cover;
           }
 
-          else if(dbh >= 5 && dbh < 21)
+          else if(charicteristics.at(i).dbh >= 5 && charicteristics.at(i).dbh < 21)
           {
-            pp_cover5to21 = pp_cover5to21 + cover;
+            pp_cover5to21 = pp_cover5to21 + charicteristics.at(i).cover;
           }
 
           else
           {
-            pp_cover0to5 = pp_cover0to5 + cover;
+            pp_cover0to5 = pp_cover0to5 + charicteristics.at(i).cover;
           }
 
         }
@@ -89,26 +90,26 @@ void Sclass::processSuccession(){
       lp_cover5to21 = 0;
       lp_cover0to5 = 0;
 
-      if(species == 2)
+      if(charicteristics.at(i).species == 2)
       {
         total2 = 0;
 				
-        while(species == 2 && year == year_count)
+        while(charicteristics.at(i).species == 2 && charicteristics.at(i).year == year_count)
         {
-          total2 = total2 + cover;
+          total2 = total2 + charicteristics.at(i).cover;
 
-          if(dbh >= 21)
+          if(charicteristics.at(i).dbh >= 21)
           {
-            lp_tpa21 = lp_tpa21 + treeCount;
-            lp_cover21 = lp_cover21 + cover;
+            lp_tpa21 = lp_tpa21 + charicteristics.at(i).treeCount;
+            lp_cover21 = lp_cover21 + charicteristics.at(i).cover;
           }
-          else if(dbh >= 5 && dbh < 21)
+          else if(charicteristics.at(i).dbh >= 5 && charicteristics.at(i).dbh < 21)
           {
-            lp_cover5to21 = lp_cover5to21 + cover;
+            lp_cover5to21 = lp_cover5to21 + charicteristics.at(i).cover;
           }
           else
           {
-          lp_cover0to5 = lp_cover0to5 + cover;
+          lp_cover0to5 = lp_cover0to5 + charicteristics.at(i).cover;
           }
         }
       }
@@ -123,26 +124,26 @@ void Sclass::processSuccession(){
       other_cover0to5 = 0;
 
 
-      if(species > 2)
+      if(charicteristics.at(i).species > 2)
       {
         total3 = 0;
 				
-        while(species > 2 && year == year_count)
+        while(charicteristics.at(i).species > 2 && charicteristics.at(i).year == year_count)
         {
-          total3 = total3 + cover;
+          total3 = total3 + charicteristics.at(i).cover;
 
-          if(dbh >= 21)
+          if(charicteristics.at(i).dbh >= 21)
           {
-            other_tpa21 = other_tpa21 + treeCount;
-            other_cover21 = other_cover21 + cover;
+            other_tpa21 = other_tpa21 + charicteristics.at(i).treeCount;
+            other_cover21 = other_cover21 + charicteristics.at(i).cover;
           }
-          else if(dbh >= 5 && dbh < 21)
+          else if(charicteristics.at(i).dbh >= 5 && charicteristics.at(i).dbh < 21)
           {
-            other_cover5to21 = other_cover5to21 + cover;
+            other_cover5to21 = other_cover5to21 + charicteristics.at(i).cover;
           }
           else
           {
-            other_cover0to5 = other_cover0to5 + cover;
+            other_cover0to5 = other_cover0to5 + charicteristics.at(i).cover;
           }
         }
       }
@@ -150,8 +151,10 @@ void Sclass::processSuccession(){
       {
         total3 = 0;
       }
-    }
-    k++;
+      k++;
+	  i++;
+   }
+
     double total = total1 + total2 + total3;
     double total_percent_cover = 100*(1-exp(-.01*total));
     double percent_ponderosa = 100*(1-exp(-.01*total1));
@@ -244,12 +247,13 @@ void Sclass::processSuccession(){
 	
 };
 
-Sclass::Sclass(int pTreeCn, int pFml, double pHeight, double pHeightLive, double pCbd){
+Sclass::Sclass(int pTreeCn, int pYear, int pFml, double pHeight, double pHeightLive, double pCbd){
   treeCn = pTreeCn;
   fml = pFml;
   height = pHeight;
   heightLive = pHeightLive;
   cbd = pCbd;
+  year = pYear;
 };
 
 Sclass::~Sclass(){

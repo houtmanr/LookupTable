@@ -37,7 +37,7 @@ DBase::DBase()
     cout<<DAM<<": Successfully connected to database. Data source name:\n  "<<inputs.GetDatabaseName()<<endl; 
 
     // Query the data file and pull out the stand characteristics for processing
-    LPCTSTR query = _T("SELECT FVS_Compute.[StandID], FVS_Compute.[FML], FVS_Compute.[HTT], FVS_Compute.HTLIVE, FVS_Compute.[CBD] FROM FVS_Compute;");
+    LPCTSTR query = _T("SELECT FVS_Compute.[StandID], FVS_Compute.[Year], FVS_Compute.[FML], FVS_Compute.[HTT], FVS_Compute.HTLIVE, FVS_Compute.[CBD] FROM FVS_Compute;");
 
     cout<<DAM<<": SQL query:\n"<<CStringA(query)<<endl;
 
@@ -66,10 +66,12 @@ DBase::DBase()
       CDBVariant var;
       CString value;
 	  int lTreeCn;
+	  int lYear;
 	  int lFml;
 	  double lHeight;
 	  double lHeightLive;
 	  double lCbd;
+	  Sclass successionClass;
 	  vector<Sclass> sclassVector;
 
       int rowCount = 0;
@@ -83,6 +85,9 @@ DBase::DBase()
             case DBVT_WSTRING:
               value.Format(_T("%s"), var.m_pstringW->GetBuffer(var.m_pstringW->GetLength()));
               break;
+			case DBVT_LONG:
+			  value.Format(_T("%d"), var.m_lVal);
+			  break;
             case DBVT_DOUBLE:
               value.Format(_T("%lf"), var.m_dblVal);
               break;
@@ -91,24 +96,26 @@ DBase::DBase()
           }
           cout<<" | "<<CStringA(value);
 		  if(nIndex == 0)
-			  lTreeCn = _wtoi(value);
-		  if(nIndex == 1)
-			  lFml = _wtoi(value);
-		  if(nIndex == 2)
-			  lHeight = _wtof(value);
-		  if(nIndex == 3)
-			  lHeightLive = _wtof(value);
-		  if(nIndex == 4)
-			  lCbd = _wtof(value);
+		    lTreeCn = _wtoi(value);
+		  else if(nIndex == 1)
+		    lYear = _wtoi(value);
+		  else if(nIndex == 2)
+		    lFml = _wtoi(value);
+		  else if(nIndex == 3)
+		    lHeight = _wtof(value);
+		  else if(nIndex == 4)
+		    lHeightLive = _wtof(value);
+		  else if(nIndex == 5)
+		    lCbd = _wtof(value);
         }
         cout<<endl;
         rowCount++;
         rs.MoveNext();
-		Sclass successionClass = Sclass(lTreeCn, lFml, lHeight, lHeightLive,lCbd);
+		successionClass = Sclass(lTreeCn, lYear, lFml, lHeight, lHeightLive,lCbd);
 		sclassVector.push_back(successionClass);
       }
       cout<<DAM<<": Total Row Count: "<<rowCount<<endl;
-	  
+	  successionClass.processSuccession(sclassVector);
 	}
   }
   CATCH_ALL(e)

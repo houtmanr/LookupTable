@@ -6,8 +6,8 @@ class Sclass{
 public:
   ~Sclass(void);
   Sclass();
-  Sclass(int pTreeCn, int pFml, double pHeight, double pHeightLive, double pCbd);
-  void processSuccession();
+  Sclass(int pTreeCn, int pyear, int pFml, double pHeight, double pHeightLive, double pCbd);
+  void processSuccession(vector<Sclass> charicteristic);
   
 
 private:
