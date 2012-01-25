@@ -30,6 +30,9 @@
     <ClInclude Include="DatabaseProcessing.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Sclass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -42,6 +45,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="DatabaseProcessing.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Sclass.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

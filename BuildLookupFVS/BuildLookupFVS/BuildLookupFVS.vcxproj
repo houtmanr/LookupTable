@@ -82,6 +82,7 @@
   <ItemGroup>
     <ClInclude Include="buildInputFile.h" />
     <ClInclude Include="DatabaseProcessing.h" />
+    <ClInclude Include="Sclass.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
@@ -89,6 +90,7 @@
     <ClCompile Include="buildInputFile.cpp" />
     <ClCompile Include="BuildLookupFVS.cpp" />
     <ClCompile Include="DatabaseProcessing.cpp" />
+    <ClCompile Include="Sclass.cpp" />
     <ClCompile Include="stdafx.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
