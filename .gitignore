@@ -1,9 +1,9 @@
 *.mdb
-\BuildLookupFVS\Debug*
+BuildLookupFVS/Debug/*
 *.sln
 *.suo
 *.exe
-\BuildLookupFVS\BuildLookupFVS\Debug*
+BuildLookupFVS/BuildLookupFVS/Debug/*
 *.fvs
 *.bat
 *.in
