@@ -13,8 +13,8 @@
 int _tmain(int argc, _TCHAR* argv[])
 {
 
-	char fvs[100]; 
-	int standNumber=49;
+//	char fvs[100]; 
+//	int standNumber=49;
 	//FILE* standlist;
 
 	 //File containing stands to be simulated.
@@ -24,18 +24,18 @@ int _tmain(int argc, _TCHAR* argv[])
 	//while(!feof(standlist))
 	//{
 		//fscanf_s(standlist, "%d\n", &standNumber);
-		InputFile* fileCreator = new InputFile(standNumber);
+//		InputFile* fileCreator = new InputFile(standNumber);
 
-		sprintf_s(fvs, "..\\..\\FVSInputFiles\\%d.bat", standNumber);
+//		sprintf_s(fvs, "..\\..\\FVSInputFiles\\%d.bat", standNumber);
 
 		// Call FVS in command line
-		system(fvs);
-
-		fileCreator->~InputFile();
+//		system(fvs);
+        DBase openMDB;
+//		fileCreator->~InputFile();
 	//}
 
 	//fclose(standlist);
-	DBase openMDB;
+	
 
 	//getchar();
 
