@@ -7,7 +7,7 @@ public:
   ~Sclass(void);
   Sclass();
   Sclass(int pTreeCn, int pYear, int pFml, double pHeight, double pHeightLive, double pCbd);
-  Sclass(int pTreeCn, int pYear, double pTreeValue, char pSpecies[2], double pDbh, double pCrownWidth);
+  Sclass(int pTreeCn, int pYear, double pTreeValue, char pSpecies[3], double pDbh, double pCrownWidth);
   void processSuccession(vector<Sclass> treeList);
   
 
@@ -20,7 +20,7 @@ private:
   double cbd;
   double height;
   double heightLive;
-  char species[2];
+  char species[8];
   double treeVolume;
   double treeCount;  // Trees per acre (TPA)
   double dbh;

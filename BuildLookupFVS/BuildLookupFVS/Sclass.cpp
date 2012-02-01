@@ -20,44 +20,41 @@ void Sclass::processSuccession(vector<Sclass> treeList){
   int density_class;
   char succession_class[2];
 
-  double total1 = 0;
-  double total2 = 0;
-  double total3 = 0;
-  double pp_tpa21 = 0;
-  double lp_tpa21 = 0;
-  double other_tpa21 = 0;
-  double pp_cover21 = 0;
-  double lp_cover21 = 0;
-  double other_cover21 = 0;
-  double pp_cover5to21 = 0;
-  double lp_cover5to21 = 0;
-  double other_cover5to21 = 0;
-  double pp_cover0to5 = 0;
-  double lp_cover0to5 = 0;
-  double other_cover0to5 = 0;
+
 
   int size = treeList.size();
 
   int i = 0;
-  while(i<size)
+  while(i<(size-1))
   {
     int year_count = treeList.at(i).year;
     int treeCn_count = treeList.at(i).treeCn;
       
-	pp_tpa21 = 0;
-    pp_cover21 = 0;
-    pp_cover5to21 = 0;
-    pp_cover0to5 = 0;
+    double total1 = 0;
+    double total2 = 0;
+    double total3 = 0;
+    double pp_tpa21 = 0;
+    double lp_tpa21 = 0;
+    double other_tpa21 = 0;
+    double pp_cover21 = 0;
+    double lp_cover21 = 0;
+    double other_cover21 = 0;
+    double pp_cover5to21 = 0;
+    double lp_cover5to21 = 0;
+    double other_cover5to21 = 0;
+    double pp_cover0to5 = 0;
+    double lp_cover0to5 = 0;
+    double other_cover0to5 = 0;
 
-	char * ponderosa("PP");
-	char * lodgepole("LP");
+	char ponderosa[9];
+	char lodgepole[9];
+	strcpy_s(ponderosa, "PP      ");
+	strcpy_s(lodgepole, "LP      ");
 
     while(treeList.at(i).year == year_count)
 	{
       if(strcmp(treeList.at(i).species, ponderosa) == 0)
       {
-        total1 = 0;
-
         while(strcmp(treeList.at(i).species, ponderosa) == 0 && treeList.at(i).year == year_count)
         {
           total1 = total1 + treeList.at(i).cover;
@@ -81,20 +78,8 @@ void Sclass::processSuccession(vector<Sclass> treeList){
         }
 				
       }
-      else
-      {
-        total1 = 0;
-      }
-
-      lp_tpa21 = 0;
-      lp_cover21 = 0;
-      lp_cover5to21 = 0;
-      lp_cover0to5 = 0;
-
-      if(strcmp(treeList.at(i).species, lodgepole) == 0)
-      {
-        total2 = 0;
-				
+      else if(strcmp(treeList.at(i).species, lodgepole) == 0)
+      {	
         while(strcmp(treeList.at(i).species, lodgepole) == 0 && treeList.at(i).year == year_count)
         {
           total2 = total2 + treeList.at(i).cover;
@@ -115,22 +100,9 @@ void Sclass::processSuccession(vector<Sclass> treeList){
 		  i++;
         }
       }
-      else
-      {
-        total2 = 0;
-      }
-
-      other_tpa21 = 0;
-      other_cover21 = 0;
-      other_cover5to21 = 0;
-      other_cover0to5 = 0;
-
-
-      if(strcmp(treeList.at(i).species, lodgepole) == 1 && strcmp(treeList.at(i).species, ponderosa) == 1)
-      {
-        total3 = 0;
-				
-        while(strcmp(treeList.at(i).species, lodgepole) == 1 && strcmp(treeList.at(i).species, ponderosa) == 1 && treeList.at(i).year == year_count)
+      else if(strcmp(treeList.at(i).species, lodgepole) != 0 && strcmp(treeList.at(i).species, ponderosa) != 0)
+      {	
+        while(strcmp(treeList.at(i).species, lodgepole) != 0 && strcmp(treeList.at(i).species, ponderosa) != 0 && treeList.at(i).year == year_count)
         {
           total3 = total3 + treeList.at(i).cover;
 
@@ -150,11 +122,6 @@ void Sclass::processSuccession(vector<Sclass> treeList){
 		  i++;
         }
       }
-      else
-      {
-        total3 = 0;
-      }
-      
    }
 
     double total = total1 + total2 + total3;

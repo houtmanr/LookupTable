@@ -4,7 +4,7 @@
 class LUTable
 {
 public: 
-	LUTable(int standNumber);
+	LUTable();
 	char pathway[128];
 	FILE * input;
 	~LUTable(void);

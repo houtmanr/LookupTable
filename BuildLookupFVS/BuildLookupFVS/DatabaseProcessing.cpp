@@ -146,7 +146,7 @@ DBase::DBase()
 	  // Variables to hold characteristics
 	  int lTreeCn;
 	  int lYear;
-	  char lSpecies[2];
+	  char lSpecies[9];
 	  double lTreeValue; 
 	  double lDbh;
 	  double lCrownWidth;
@@ -195,6 +195,9 @@ DBase::DBase()
         treeListVector.push_back(treeListSuccession);
 	  }
 	  cout<<DAM<<": Total Row Count: "<<rowCount<<endl;
+	  treeListSuccession = Sclass(0, 0, 0, lSpecies, 0, 0);
+	  // Adds an empty to the end of the vector.
+	  treeListVector.push_back(treeListSuccession);
 	  treeListSuccession.processSuccession(treeListVector);
 		  
 	}

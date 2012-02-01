@@ -21,39 +21,15 @@ int htlive;
 double cbd;
 }plot;
 
-LUTable::LUTable(int lookuptable)
+LUTable::LUTable()
 {
-	FILE *ponderosa;
+	
 	FILE *fout;
-	char header[256];
-	int i;
-	int j;
-	int k;
-	plot plots[650];
 	int canopy_cover, crown_base_height, canopy_height, crown_bulk_density;
 
-	ponderosa = fopen("N:\\Visual_Basic\\Ponderosa_Fire_A_B_C_D_E.txt","r");
 	fout = fopen("N:\\Visual_Basic\\Ponderosa_Fire_A_B_C_D_E_Output.txt","w");
 
-	fgets(header,sizeof(header), ponderosa);
 
-	i = 0;
-	j = 0;// Counts the number of stands
-
-	while(!feof(ponderosa))
-	{
-		fscanf(ponderosa, "%d %d %d %d %lf %d %lf %d\n", &plots[i].stand_id, &plots[i].sclass, &plots[i].year, &plots[i].canopy, &plots[i].htt, &plots[i].htlive, &plots[i].cbd, &plots[i].fml);
-		if(i>0 && plots[i].stand_id != plots[i-1].stand_id)
-		{
-			j++;
-		}
-		i++;
-	}
-
-	fclose(ponderosa);
-
-	i = 0;
-	k = 0;
 
 	canopy_cover = 0;
 	crown_base_height = 0;
@@ -66,6 +42,8 @@ LUTable::LUTable(int lookuptable)
 
 	fprintf(fout, "stand_id sclass year canopy_cover crown_base_height canopy_height crown_bulk_density fuel_model\n");
 
+    int k = 0;
+	int j = 0;
 	while(k<=j)
 	{
 		int stand_id_count = plots[i].stand_id;
