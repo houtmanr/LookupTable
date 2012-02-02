@@ -13,19 +13,17 @@ Sclass::Sclass(){
 	
 };
 
-void Sclass::processSuccession(vector<Sclass> treeList){
+void Sclass::processSuccession(vector<Sclass> treeList, vector<Sclass> tableValues){
 
   
   int size_class;
   int density_class;
-  char succession_class[2];
+  int succession_class;
+  int j = 0; // Tracks years.
 
-
-
-  int size = treeList.size();
-
-  int i = 0;
-  while(i<(size-1))
+  int sizeTL = treeList.size();
+  int i = 0; // Tracks trees.
+  while(i<(sizeTL-1))
   {
     int year_count = treeList.at(i).year;
     int treeCn_count = treeList.at(i).treeCn;
@@ -122,7 +120,7 @@ void Sclass::processSuccession(vector<Sclass> treeList){
 		  i++;
         }
       }
-   }
+    }
 
     double total = total1 + total2 + total3;
     double total_percent_cover = 100*(1-exp(-.01*total));
@@ -187,35 +185,159 @@ void Sclass::processSuccession(vector<Sclass> treeList){
 
     if(size_class == 1)
     {
-      sprintf_s(succession_class,"A"); // Can I just put a in place of "A"?  Same for the rest of the classes..."B"=2, "C"=3...
+      succession_class = 1; // A
     }
     else if(size_class == 2 && density_class == 1)
     {
-      sprintf_s(succession_class,"C");
+      succession_class = 3; // C
     }
     else if(size_class == 2 && density_class == 2)
     {
-      sprintf_s(succession_class,"B");
+      succession_class = 2; // B
     }
     else if(size_class == 3 && density_class == 1)
     {
-      sprintf_s(succession_class,"D");
+      succession_class = 4; // D
     }
     else
     {
-      sprintf_s(succession_class,"E");
+      succession_class = 5; // E
     }
 
 	}
    
-   treeList.at(i).treeCn, treeList.at(i).year, succession_class;
+    tableValues.at(j).successionClass = succession_class;
+	j++;
   }
-	
+  
+  createLookupTable(tableValues);
+  
 };
 
-Sclass::Sclass(int pTreeCn, int pYear, int pFml, double pHeight, double pHeightLive, double pCbd){
+void Sclass::createLookupTable(vector<Sclass> tableValues)
+{
+	FILE *fout;
+	int canopy_cover, crown_base_height, canopy_height, crown_bulk_density;
+
+	fout = fopen("..\\..\\FVSOutputFiles\\Ponderosa_Fire_A_B_C_D_E_Output.txt","a");
+
+	canopy_cover = 0;
+	crown_base_height = 0;
+	canopy_height = 0;
+	crown_bulk_density = 0;
+	
+	int i = 0;
+	int sclass_count = tableValues[i].successionClass;
+	int year_count = tableValues[i].year;
+	int fuel_model = tableValues[i].fml;
+
+	fprintf(fout, "stand_id sclass year canopy_cover crown_base_height canopy_height crown_bulk_density fuel_model\n");
+
+
+	int j = tableValues.size();
+	while ( i < j )
+	{
+		int sclass_count = tableValues[i].successionClass;
+		int fuel_model = tableValues[i].fml;
+		int year_count = tableValues[i].year;
+		treeCn = tableValues[i].treeCn;
+
+				if(tableValues[i].cover > 0 && tableValues[i].cover < 1)
+				{
+					canopy_cover = 0;
+				}
+				else if(tableValues[i].cover >= 1 && tableValues[i].cover < 25)
+				{
+					canopy_cover = 20;
+				}
+				else if(tableValues[i].cover >= 25 && tableValues[i].cover < 50)
+				{
+					canopy_cover = 45;
+				}
+				else if(tableValues[i].cover >= 50 && tableValues[i].cover < 75)
+				{
+					canopy_cover = 70;
+				}
+				else
+				{
+					canopy_cover = 95;
+				}
+
+				if(tableValues[i].heightLive > 0 && tableValues[i].heightLive < 1)
+				{
+					crown_base_height = 0;
+				}
+				else if(tableValues[i].heightLive >= 1 && tableValues[i].heightLive < 10)
+				{
+					crown_base_height = 50;
+				}
+				else if(tableValues[i].heightLive >= 10 && tableValues[i].heightLive < 20)
+				{
+					crown_base_height = 150;
+				}
+				else if(tableValues[i].heightLive >= 20 && tableValues[i].heightLive < 30)
+				{
+					crown_base_height = 250;
+				}
+				else
+				{
+					crown_base_height = 350;
+				}
+				
+				if(tableValues[i].height > 0 && tableValues[i].height < 1)
+				{
+					canopy_height = 0;
+				}
+				else if(tableValues[i].height >= 1 && tableValues[i].height < 30)
+				{
+					canopy_height = 150;
+				}
+				else if(tableValues[i].height >= 30 && tableValues[i].height < 60)
+				{
+					canopy_height = 450;
+				}
+				else if(tableValues[i].height >= 60 && tableValues[i].height < 90)
+				{
+					canopy_height = 750;
+				}
+				else if(tableValues[i].height >= 90)
+				{
+					canopy_height = 1000;
+				}
+				
+				if(tableValues[i].cbd > 0 && tableValues[i].cbd < .01)
+				{
+					crown_bulk_density = 0;
+				}
+				else if(tableValues[i].cbd >= .01 && tableValues[i].cbd < .06)
+				{
+					crown_bulk_density = 3;
+				}
+				else if(tableValues[i].cbd >= .06 && tableValues[i].cbd < .1)
+				{
+					crown_bulk_density = 8;
+				}
+				else if(tableValues[i].cbd >= .1 && tableValues[i].cbd < .2)
+				{
+					crown_bulk_density = 15;
+				}
+				else if(tableValues[i].cbd >= .02)
+				{
+					crown_bulk_density = 28;
+				}
+				i++;
+		
+				fprintf(fout, "%d %d %d %d %d %d %d %d\n", 
+					treeCn, sclass_count, year_count, canopy_cover, crown_base_height, canopy_height, crown_bulk_density, fuel_model);
+	}
+	fclose(fout);
+
+};
+
+Sclass::Sclass(int pTreeCn, int pYear, double pCover, int pFml, double pHeight, double pHeightLive, double pCbd){
   treeCn = pTreeCn;
   fml = pFml;
+  cover = pCover;
   height = pHeight;
   heightLive = pHeightLive;
   cbd = pCbd;
@@ -232,7 +354,6 @@ Sclass::Sclass(int pTreeCn, int pYear, double pTreeCount, char pSpecies[2], doub
 	strcpy(species, pSpecies);
 
 };
-
 
 Sclass::~Sclass(){
 };

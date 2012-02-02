@@ -38,9 +38,11 @@ DBase::DBase()
     cout<<DAM<<": Successfully connected to database. Data source name:\n  "<<inputs.GetDatabaseName()<<endl; 
 
     // Query the data file and pull out the stand characteristics for processing
-	LPCTSTR query = _T("SELECT FVS_Compute.[StandID], FVS_Compute.[Year], FVS_Compute.[FML], FVS_Compute.[HTT], FVS_Compute.HTLIVE, FVS_Compute.[CBD] FROM FVS_Compute;");
+	LPCTSTR query = _T("SELECT FVS_Compute.[StandID], FVS_Compute.[Year], FVS_Compute.[CANOPY], FVS_Compute.[FML], FVS_Compute.[HTT], FVS_Compute.[HTLIVE], FVS_Compute.[CBD] FROM FVS_Compute;");
     
 	cout<<DAM<<": SQL query:\n"<<CStringA(query)<<endl;
+
+	vector<Sclass> computeVector;
 
     CRecordset rs(&inputs);
     result = rs.Open(CRecordset::dynaset, query, CRecordset::none);
@@ -73,8 +75,9 @@ DBase::DBase()
 	  double lHeight;
 	  double lHeightLive;
       double lCbd;
+	  double lCover;
 	  Sclass computeSuccession;
-	  vector<Sclass> computeVector;
+	  
 
 	  int rowCount = 0;
 	  while (!rs.IsEOF())
@@ -101,19 +104,23 @@ DBase::DBase()
 		  else if(nIndex == 1)
 		    lYear = _wtoi(value);
 		  else if(nIndex == 2)
-		    lFml = _wtoi(value);
+            lCover = _wtof(value);
 		  else if(nIndex == 3)
-		    lHeight = _wtof(value);
+		    lFml = _wtoi(value);
 		  else if(nIndex == 4)
+		    lHeight = _wtof(value);
+		  else if(nIndex == 5)
 		    lHeightLive = _wtof(value);
-          else if(nIndex == 5)
+          else if(nIndex == 6)
 		    lCbd = _wtof(value);
         }
         rowCount++;
         rs.MoveNext();
-        computeSuccession = Sclass(lTreeCn, lYear, lFml, lHeight, lHeightLive, lCbd);
+        computeSuccession = Sclass(lTreeCn, lYear, lCover, lFml, lHeight, lHeightLive, lCbd);
         computeVector.push_back(computeSuccession);
 	  }
+
+	  computeVector.push_back(computeSuccession);
 	  cout<<DAM<<": Total Row Count: "<<rowCount<<endl;
 	}
 
@@ -198,7 +205,7 @@ DBase::DBase()
 	  treeListSuccession = Sclass(0, 0, 0, lSpecies, 0, 0);
 	  // Adds an empty to the end of the vector.
 	  treeListVector.push_back(treeListSuccession);
-	  treeListSuccession.processSuccession(treeListVector);
+	  treeListSuccession.processSuccession(treeListVector, computeVector);
 		  
 	}
   }

@@ -39,7 +39,7 @@ InputFile::InputFile(int stand)
 						   "%d\nSTANDCN\n"
 						   "%d\nMGMTID\n"
 						   "\nINVYEAR      2007\n"
-						   "NUMCYCLE        20\n"
+						   "NUMCYCLE        21\n"
 						   "TIMEINT         0         5\n"
 						   "SCREEN\n"
 						   , stand, stand);
@@ -61,7 +61,7 @@ InputFile::InputFile(int stand)
 						   "END\n", inPath, inPath);
 
 			fprintf(input, "TREELIST         0        50         0\n"
-							"COMPUTE            0\n"
+							"COMPUTE         0\n"
 						    "canopy = acancov\n"
 						    "fml = fuelmods(1,1)\n"
 						    "htt = ATOPHT\n"
