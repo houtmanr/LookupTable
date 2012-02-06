@@ -6,7 +6,7 @@ class Sclass{
 public:
   ~Sclass(void);
   Sclass();
-  Sclass(int pTreeCn, int pYear, double pCover, int pFml, double pHeight, double pHeightLive, double pCbd);
+  Sclass(int pTreeCn, int pYear, double pCover, int pFml, double pHeight, double pHeightLive, double pCbd, double psdi, double pba, double ptpa, double pbdft);
   Sclass(int pTreeCn, int pYear, double pTreeValue, char pSpecies[3], double pDbh, double pCrownWidth);
   void createLookupTable(vector<Sclass> tableValues);
   void processSuccession(vector<Sclass> treeList, vector<Sclass> tableValues);
@@ -27,4 +27,8 @@ private:
   double baAcre;     // ba_acre = .005454 * tree_count * dbh^2
   double crownWidth; // Need crown_width in order to compute cover
   double cover;
+  double sdi;
+  double ba;
+  double tpa;
+  double bdft;
 };

@@ -230,8 +230,13 @@ void Sclass::createLookupTable(vector<Sclass> tableValues)
 	int sclass_count = tableValues[i].successionClass;
 	int year_count = tableValues[i].year;
 	int fuel_model = tableValues[i].fml;
+	double sdi_count = tableValues[i].sdi;
+	double ba_count = tableValues[i].ba;
+	double tpa_count = tableValues[i].tpa;
+	double bdft_count = tableValues[i].bdft;
 
-	fprintf(fout, "stand_id sclass year canopy_cover crown_base_height canopy_height crown_bulk_density fuel_model\n");
+
+	fprintf(fout, "stand_id year sclass canopy_cover crown_base_height canopy_height crown_bulk_density fuel_model stand_density_index basal_area trees_per_acre removed_bdft\n");
 
 
 	int j = tableValues.size();
@@ -240,6 +245,10 @@ void Sclass::createLookupTable(vector<Sclass> tableValues)
 		int sclass_count = tableValues[i].successionClass;
 		int fuel_model = tableValues[i].fml;
 		int year_count = tableValues[i].year;
+		double sdi_count = tableValues[i].sdi;
+	    double ba_count = tableValues[i].ba;
+	    double tpa_count = tableValues[i].tpa;
+	    double bdft_count = tableValues[i].bdft;
 		treeCn = tableValues[i].treeCn;
 
 				if(tableValues[i].cover > 0 && tableValues[i].cover < 1)
@@ -327,14 +336,14 @@ void Sclass::createLookupTable(vector<Sclass> tableValues)
 				}
 				i++;
 		
-				fprintf(fout, "%d %d %d %d %d %d %d %d\n", 
-					treeCn, sclass_count, year_count, canopy_cover, crown_base_height, canopy_height, crown_bulk_density, fuel_model);
+				fprintf(fout, "%d %d %d %d %d %d %d %d %lf %lf %lf %lf\n", 
+					treeCn, year_count, sclass_count, canopy_cover, crown_base_height, canopy_height, crown_bulk_density, fuel_model, sdi_count, ba_count, tpa_count, bdft_count);
 	}
 	fclose(fout);
 
 };
 
-Sclass::Sclass(int pTreeCn, int pYear, double pCover, int pFml, double pHeight, double pHeightLive, double pCbd){
+Sclass::Sclass(int pTreeCn, int pYear, double pCover, int pFml, double pHeight, double pHeightLive, double pCbd, double psdi, double pba, double ptpa, double pbdft){
   treeCn = pTreeCn;
   fml = pFml;
   cover = pCover;
@@ -342,6 +351,10 @@ Sclass::Sclass(int pTreeCn, int pYear, double pCover, int pFml, double pHeight, 
   heightLive = pHeightLive;
   cbd = pCbd;
   year = pYear;
+  sdi = psdi;
+  ba = pba;
+  tpa = ptpa;
+  bdft = pbdft;
 };
 
  

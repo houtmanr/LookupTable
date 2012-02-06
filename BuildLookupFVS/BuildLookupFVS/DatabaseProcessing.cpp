@@ -38,7 +38,7 @@ DBase::DBase()
     cout<<DAM<<": Successfully connected to database. Data source name:\n  "<<inputs.GetDatabaseName()<<endl; 
 
     // Query the data file and pull out the stand characteristics for processing
-	LPCTSTR query = _T("SELECT FVS_Compute.[StandID], FVS_Compute.[Year], FVS_Compute.[CANOPY], FVS_Compute.[FML], FVS_Compute.[HTT], FVS_Compute.[HTLIVE], FVS_Compute.[CBD] FROM FVS_Compute;");
+	LPCTSTR query = _T("SELECT FVS_Compute.[StandID], FVS_Compute.[Year], FVS_Compute.[CANOPY], FVS_Compute.[FML], FVS_Compute.[HTT], FVS_Compute.[HTLIVE], FVS_Compute.[CBD], FVS_Compute.[SDI], FVS_Compute.[BA], FVS_Compute.[TPA], FVS_Compute.[BDFT] FROM FVS_Compute;");
     
 	cout<<DAM<<": SQL query:\n"<<CStringA(query)<<endl;
 
@@ -76,6 +76,10 @@ DBase::DBase()
 	  double lHeightLive;
       double lCbd;
 	  double lCover;
+	  double lsdi;
+	  double lba;
+	  double ltpa;
+	  double lbdft;
 	  Sclass computeSuccession;
 	  
 
@@ -113,10 +117,18 @@ DBase::DBase()
 		    lHeightLive = _wtof(value);
           else if(nIndex == 6)
 		    lCbd = _wtof(value);
+		  else if(nIndex == 7)
+            lsdi = _wtof(value);
+		  else if(nIndex == 8)
+            lba = _wtof(value);
+		  else if(nIndex == 9)
+            ltpa = _wtof(value);
+		  else if(nIndex == 10)
+            lbdft = _wtof(value);
         }
         rowCount++;
         rs.MoveNext();
-        computeSuccession = Sclass(lTreeCn, lYear, lCover, lFml, lHeight, lHeightLive, lCbd);
+        computeSuccession = Sclass(lTreeCn, lYear, lCover, lFml, lHeight, lHeightLive, lCbd, lsdi, lba, ltpa, lbdft);
         computeVector.push_back(computeSuccession);
 	  }
 
@@ -187,7 +199,7 @@ DBase::DBase()
 		  else if(nIndex == 1)
 		    lYear = _wtoi(value);
 		  else if(nIndex == 2)
-		    lTreeValue = _wtoi(value);
+		    lTreeValue = _wtof(value);
 		  else if(nIndex == 3)
 		    strcpy(lSpecies, CStringA(value));
 		  else if(nIndex == 4)
